@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<form action='/{{form_action}}' method='POST'>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name='name' value='{{member.name}}'>
+    </div>
+    <div class="form-group">
+        <label>Laste Name</label>
+        <input type="text" class="form-control" name='last_name' value='{{member.last_name}}'>
+    </div>
+    <div class="form-group">
+      <label >Email address</label>
+      <input type="email" class="form-control" name='email' value='{{member.email}}'>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label >Phone</label>
+      <input type="number" class="form-control" name='phone' value='{{member.phone}}'>
+    </div>
+    <button type="submit" class="btn btn-success mt-3">Submit</button>
+    <input type="hidden" name='id' value='{{member.id}}'>
+</form>
+{% endblock body %}  
